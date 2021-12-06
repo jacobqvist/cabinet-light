@@ -12,8 +12,9 @@ g := ByteArray PIXELS
 b := ByteArray PIXELS
 
 main:
+    set_up_proximity_sensor_
     while true:
-        if proximity < 4:
+        if sensor.read_ps_data < 4:
             r.fill 50
             g.fill 50
             b.fill 50
@@ -40,16 +41,12 @@ sensor := Vcnl4040 device
 
 id := sensor.get_id
 
-proximity -> int:
-  if id != Vcnl4040.DEVICE_ID:
-    throw "Id was 0x$(%x id). Wrong device attached to I2C bus?"
-
+set_up_proximity_sensor_: 
   sensor.set_ps_led_current 200         // Max is 200mA.
   sensor.set_ps_duty_cycle 40           // Max infrared duty cycle is 1/40.
   sensor.set_ps_integration_time Vcnl4040.PS_IT_8T  // Max integration time.
   sensor.set_ps_resolution 16           // 16 bit output.
   sensor.set_ps_smart_persistence true  // Enable smart persistence.
   sensor.set_ps_power true              // Power on.
-  
-  return sensor.read_ps_data
+
   
