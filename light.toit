@@ -6,8 +6,9 @@ import vcnl4040 show Vcnl4040
 
 //Pixel strip
 PIXELS ::= 30  // Number of pixels on the strip.
+PIXEL_PIN ::= 27 // Output pin - this is the normal pin for UART 2.
 
-pixels := UartPixelStrip PIXELS --pin=27  // Output pin - this is the normal pin for UART 2.
+pixels := UartPixelStrip PIXELS --pin=PIXEL_PIN  
 r := ByteArray PIXELS
 g := ByteArray PIXELS
 b := ByteArray PIXELS
