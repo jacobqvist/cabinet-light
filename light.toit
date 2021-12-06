@@ -52,5 +52,4 @@ proximity -> int:
   sensor.set_ps_power true              // Power on.
   
   return sensor.read_ps_data
-  yield
   
