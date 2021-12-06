@@ -1,6 +1,6 @@
 # Closet light
 
-I hate, when I cannot see what's in my closet. Closets with light are expensive as \*\*\*\*, so I decided to build my own. Next step is to make it prettier.
+I hate, when I cannot see what's in my closet. Closets with light are expensive as \*\*\*\*, so I decided to build my own. Next step is to make it pretty.
 
 ![Closet light](media/closet-light.gif)
 
